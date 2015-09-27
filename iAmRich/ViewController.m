@@ -8,9 +8,11 @@
 
 #import "ViewController.h"
 
+
 @interface ViewController ()
-@property (weak, nonatomic) IBOutlet UIImageView *ruby;
-@property (weak, nonatomic) IBOutlet UILabel *iamRich;
+
+@property (weak, nonatomic) IBInspectable UILabel *iamRich;
+@property (weak, nonatomic) IBInspectable UIImageView *ruby;
 
 @end
 
@@ -27,16 +29,17 @@
 {
     [super viewWillAppear:animated];
     NSLog(@"ruby's alpha = %1.0f", self.ruby.alpha);
-    [UIView animateWithDuration:4 animations:^{
+    [UIView animateWithDuration:3 animations:^{
         self.ruby.alpha = 1;
         NSLog(@"ruby's alpha = %1.0f", self.ruby.alpha);
     } completion:^(BOOL finished) {
         [UIView animateWithDuration:3 animations:^{
-            self.iamRich.center = CGPointMake(self.iamRich.center.x, 450);
+            self.iamRich.center = CGPointMake(self.view.center.x, self.view.center.y + 140);
             self.iamRich.alpha = 1;
-            
         } completion:nil];
     }];
+    
 }
+
 
 @end

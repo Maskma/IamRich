@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -13,29 +14,43 @@
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ruby.png" translatesAutoresizingMaskIntoConstraints="NO" id="4Hh-6o-Bnh">
-                                <rect key="frame" x="59" y="165" width="257" height="251"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="I Am Rich" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8gE-rc-SD7">
-                                <rect key="frame" x="112" y="610" width="151" height="71"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I Am Rich" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8gE-rc-SD7">
+                                <rect key="frame" x="230" y="521" width="140" height="71"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="HsP-Gd-smA"/>
+                                    <constraint firstAttribute="width" secondItem="8gE-rc-SD7" secondAttribute="height" multiplier="140:71" id="VP6-VV-F2d"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="33"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ruby.png" translatesAutoresizingMaskIntoConstraints="NO" id="fhI-Vn-nRw">
+                                <rect key="frame" x="185" y="185" width="230" height="230"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="fhI-Vn-nRw" secondAttribute="height" multiplier="1:1" id="Rs6-Gh-OIl"/>
+                                    <constraint firstAttribute="width" constant="230" id="keI-JV-feI"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="fhI-Vn-nRw" secondAttribute="centerX" id="6jZ-yg-KsY"/>
+                            <constraint firstAttribute="centerY" secondItem="fhI-Vn-nRw" secondAttribute="centerY" id="NzW-nB-y1f"/>
+                            <constraint firstItem="8gE-rc-SD7" firstAttribute="top" secondItem="fhI-Vn-nRw" secondAttribute="bottom" constant="106" id="Y4m-e1-05L"/>
+                            <constraint firstAttribute="centerX" secondItem="8gE-rc-SD7" secondAttribute="centerX" id="nFt-b6-nCn"/>
+                        </constraints>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="iamRich" destination="8gE-rc-SD7" id="kQ4-tI-HuH"/>
-                        <outlet property="ruby" destination="4Hh-6o-Bnh" id="TEx-t7-GNY"/>
+                        <outlet property="ruby" destination="fhI-Vn-nRw" id="u0y-Qb-99j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-340.5" y="165.5"/>
         </scene>
     </scenes>
     <resources>

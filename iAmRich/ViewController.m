@@ -26,7 +26,7 @@
 }
 
 - (void) viewWillAppear:(BOOL)animated
-{
+{    
     [super viewWillAppear:animated];
     NSLog(@"ruby's alpha = %1.0f", self.ruby.alpha);
     [UIView animateWithDuration:3 animations:^{
@@ -38,7 +38,7 @@
             self.iamRich.alpha = 1;
         } completion:nil];
     }];
-    
+
 }
 
 
